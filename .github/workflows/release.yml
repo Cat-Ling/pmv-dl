@@ -74,7 +74,7 @@ jobs:
             if [[ "${GOOS}" == "windows" ]]; then
               EXT=".exe"
             fi
-            OUT="dist/pmvhaven-dl-${GOOS}-${GOARCH}${EXT}"
+            OUT="dist/pmv-dl-${GOOS}-${GOARCH}${EXT}"
             echo "Building ${OUT} (${APP_VERSION})..."
             CGO_ENABLED=0 GOOS="${GOOS}" GOARCH="${GOARCH}" \
               go build -trimpath -ldflags="-s -w -X main.version=${APP_VERSION}" -o "${OUT}" main.go
@@ -82,14 +82,14 @@ jobs:
 
           (
             cd dist
-            sha256sum pmvhaven-dl-* > SHA256SUMS.txt
+            sha256sum pmv-dl-* > SHA256SUMS.txt
           )
           ls -lh dist/
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: pmvhaven-dl-${{ steps.meta.outputs.version }}-binaries
+          name: pmv-dl-${{ steps.meta.outputs.version }}-binaries
           path: dist/*
           if-no-files-found: error
 
