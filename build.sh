@@ -9,7 +9,7 @@ if ! command -v go >/dev/null 2>&1; then
     exit 1
 fi
 
-OUTPUT_BIN="pmvhaven-dl"
+OUTPUT_BIN="pmv-dl"
 LDFLAGS="-s -w"
 if [[ -n "${VERSION:-}" ]]; then
     LDFLAGS="${LDFLAGS} -X main.version=${VERSION}"

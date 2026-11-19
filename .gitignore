@@ -1,18 +1,30 @@
-# Compiled binaries
+# Compiled binaries and build/test artifacts
+pmv-dl
+pmv-dl*
 pmvhaven-dl
-pmvhaven-dl-exp
+pmvhaven-dl-*
 *.exe
+*.test
+*.prof
+coverage.out
+coverage.html
 dist/
 
-# Downloads and temporary segment directories
+# Downloads and temporary segment/partial files
 downloads/
 .*_parts/
+*.part
 *.ts
 *.tmp
+*.aria2
 
-# Local scratch / review files
+# Local scratch, cookies, and log files
 review.txt
 cookie.json
+cookies.txt
+*.cookies
+*.log
+.env
 
 # OS / Editor files
 .DS_Store
@@ -20,3 +32,5 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+*.swo
+*~

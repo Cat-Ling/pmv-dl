@@ -1,4 +1,4 @@
-module pmvhaven-dl
+module pmv-dl
 
 go 1.22
 
